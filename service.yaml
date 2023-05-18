@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: herbayur-cart-service
+spec:
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 5001
+      targetPort: 5001
+  selector:
+    app: herbayur-cart-service-app
+
+# //service.yaml file
+# -----------------------------
+# services:
+
+#   inventory:
+#     git_url: https://github.com/HERBAYUR-Shopping-Platform-DS-Y3S2/herbayur-cart-service/tree/develop
+#     git_branch: develop
+#     command: npm start
+#     build_root: .
+#     ports:
+#       - container: 5001
+#         http: 50
+#         https: 443
+#     env_vars:
+#       NODE_ENV: production
+
+# databases:  
+#   - mongodb
