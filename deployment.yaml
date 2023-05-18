@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: herbayur-cart-service-deployment
+spec:
+  selector:
+    matchLabels:
+      app: herbayur-cart-service-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hherbayur-cart-service-app
+    spec:
+      containers:
+      - name: herbayur-cart-service-server
+        image: supunhansaka/herbayur-cart-service:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5001
